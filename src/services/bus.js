@@ -29,13 +29,13 @@ class BusService {
 
     async schedule(agencyTag, routeTag) {
         let api = await http.get(`publicXMLFeed?command=schedule&a=${agencyTag}&r=${routeTag}`);
-        return parseXml(api.data, "route");
+        return api.data;
     }
 }
 
 function parseXml(xmlText, tagName) {
     var xml = new XMLParser().parseFromString(xmlText);
     var list = xml.getElementsByTagName(tagName);
-    return list.map((x) => x.attributes);
+    return list;
 }
 export default new BusService();
