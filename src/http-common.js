@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 export default axios.create({
-    baseURL: 'https://retro.umoiq.com/service',
+    baseURL: "http://localhost:8000/api/v1",
     headers: {
-        'Content-type': 'text/xml',
+        'Content-type': 'application/json'
     }
 });

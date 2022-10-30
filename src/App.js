@@ -1,4 +1,5 @@
 import './App.css';
+import './styles/grid.css';
 import { Routes, Route } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -6,7 +7,7 @@ import Home from './pages/Home';
 import Schedule from './pages/Schedule';
 import Track from './pages/Track';
 import Fare from './pages/Fare';
-
+a
 function NavBar() {
   return (
     <nav className="navbar navbar-expand navbar-dark bg-dark">
@@ -36,15 +37,17 @@ function NavBar() {
 
 function App() {
   return (
-    <div className="App">      
+    <div>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/schedule" element={<Schedule />} />
-        <Route path="/track" element={<Track />} />
-        <Route path="/fare" element={<Fare />} />
+      <div className="grid wide">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/track" element={<Track />} />
+          <Route path="/fare" element={<Fare />} />
 
-      </Routes>
+        </Routes>
+      </div>
     </div>
   );
 }
